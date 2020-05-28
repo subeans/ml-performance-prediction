@@ -238,13 +238,13 @@ def main(_):
         timeUsed = bm_vgg16.run_benchmark()
 
         print("\nTraining VGG-16 (%dx%d pixel, float%d, batchsize %d): "
-                "%.3f ms per batch / %.3f images per sec)"
+                "%.3f ms per batch / %.3f images per sec , optimizer %s)"
                 % (args.imgsize,
                 args.imgsize,
                 args.precision,
                 args.batchsize,
                 timeUsed*1000,
-                args.batchsize/timeUsed))
+                args.batchsize/timeUsed, args.optimizer))
 
         if not args.no_saving:
             if not os.path.isfile('%s.csv'%logfile):
