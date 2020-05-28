@@ -65,10 +65,20 @@ class VGG16(object):
                     prediction)
 
             # Define train_op
+            #SGD, RMSPROP, Adadelta, Adagrad, Momentum, Adam
             if self.optimizer=='sgd':
                 opt = tf.train.GradientDescentOptimizer(0.01)
             elif self.optimizer=='rmsprop':
                 opt = tf.train.RMSPropOptimizer(0.001, 0.9)
+            elif self.optimizer=='adadelta':
+                opt = tf.train.AdadeltaOptimizer(0.001, 0.9)
+            elif self.optimizer=='adagrad':
+                opt = tf.train.AdagradOptimizer(0.001)
+            elif self.optimizer=='adam':
+                opt = tf.train.AdamOptimizer(0.001, 0.9)
+            elif self.optimizer=='momentum':
+                opt = tf.train.MomentumOptimizer(0.001)
+            
 
             train_op = slim.learning.create_train_op(
                     loss,
