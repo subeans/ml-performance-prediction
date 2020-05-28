@@ -235,6 +235,7 @@ def main(_):
 
         print("========================================\n")
         print("Start training VGG-16")
+        print("Optimizer == " + args.optimizer )
         timeUsed = bm_vgg16.run_benchmark()
 
         print("\nTraining VGG-16 (%dx%d pixel, float%d, batchsize %d): "
