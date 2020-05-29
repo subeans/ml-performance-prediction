@@ -77,7 +77,7 @@ class VGG16(object):
             elif self.optimizer=='adam':
                 opt = tf.train.AdamOptimizer(0.001, 0.9)
             elif self.optimizer=='momentum':
-                opt = tf.train.MomentumOptimizer(0.001)
+                opt = tf.train.MomentumOptimizer(0.001,0.9)
             
 
             train_op = slim.learning.create_train_op(
