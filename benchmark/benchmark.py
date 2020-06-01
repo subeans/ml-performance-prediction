@@ -7,7 +7,7 @@ import os
 import argparse
 import tensorflow as tf
 import time
-from utils_tf import benchmark_matmul, benchmark_conv, benchmark_conv_mult, benchmark_VGG16
+from utils_tf import benchmark_matmul, benchmark_conv, benchmark_conv_mult, benchmark_VGG16 ,benchmark_Lenet
 from utils_tf import run_benchmark
 
 
