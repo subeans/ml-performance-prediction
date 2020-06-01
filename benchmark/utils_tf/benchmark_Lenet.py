@@ -43,7 +43,7 @@ class Lenet(object):
         g = tf.Graph()
         with g.as_default():
             batch_data = np.zeros(
-                    [self.batchsize,self.imgwidth,self.imgheight,3],
+                    [self.batchsize,self.imgwidth,self.imgheight,1],
                     dtype=datatype)
             batch_label = slim.one_hot_encoding(
                     np.zeros(self.batchsize,dtype=np.int32),
