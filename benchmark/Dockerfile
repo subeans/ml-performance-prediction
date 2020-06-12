@@ -5,7 +5,7 @@ WORKDIR /model
 
 #ENTRYPOINT ["/bin/bash",\"run_bm.sh"]
 #RUN ls
-3RUN mv ~/whitebox/lenet.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
+#RUN mv ~/whitebox/lenet.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 
 #RUN mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py \
 #/usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
