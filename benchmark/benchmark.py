@@ -272,7 +272,7 @@ def main(_):
     # Lenet5     
     if args.testLenet:
         if args.logfile == '':
-            logfile = str('benchmark_Lenet5_%s_%s'
+            logfile = str('/results/benchmark_Lenet5_%s_%s'
                     %(args.device, time.strftime("%Y%m%d")))
         else:
             logfile = args.logfile
@@ -304,7 +304,7 @@ def main(_):
                 args.batchsize/timeUsed, args.optimizer))
 
         if not args.no_saving:
-            if not os.path.isfile('/%s.csv'%logfile):
+            if not os.path.isfile('%s.csv'%logfile):
                 header = ('operation, imsize, precision (bits), batchsize,'
                         'time per batch (ms), performance (img/sec), '
                         'memory use (MB), comment\n')
