@@ -272,7 +272,7 @@ def main(_):
     # Lenet5     
     if args.testLenet:
         if args.logfile == '':
-            logfile = str('benchmark_Lenet5_%s_%s'
+            logfile = str('ml-performance-prediction/benchmark/benchmark_Lenet5_%s_%s'
                     %(args.device, time.strftime("%Y%m%d")))
         else:
             logfile = args.logfile
