@@ -272,7 +272,7 @@ def main(_):
     # Lenet5     
     if args.testLenet:
         if args.logfile == '':
-            logfile = str('ml-performance-prediction/benchmark/benchmark_Lenet5_%s_%s'
+            logfile = str('benchmark_Lenet5_%s_%s'
                     %(args.device, time.strftime("%Y%m%d")))
         else:
             logfile = args.logfile
@@ -304,11 +304,11 @@ def main(_):
                 args.batchsize/timeUsed, args.optimizer))
 
         if not args.no_saving:
-            if not os.path.isfile('%s.csv'%logfile):
+            if not os.path.isfile('/%s.csv'%logfile):
                 header = ('operation, imsize, precision (bits), batchsize,'
                         'time per batch (ms), performance (img/sec), '
                         'memory use (MB), comment\n')
-                f = open('%s.csv'%logfile,'a+')
+                f = open('/%s.csv'%logfile,'a+')
                 f.write(header)
                 f.close()
 
@@ -316,7 +316,7 @@ def main(_):
                 mem = bm_Lenet.get_memory_use()
             else:
                 mem = 0
-            with open('%s.csv'%logfile,'a+') as f:
+            with open('/%s.csv'%logfile,'a+') as f:
                 f.write(model.generate_logtext(timeUsed, mem))
 
         if not args.no_timeline:
