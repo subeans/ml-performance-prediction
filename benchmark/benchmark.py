@@ -308,7 +308,7 @@ def main(_):
                 header = ('operation, imsize, precision (bits), batchsize,'
                         'time per batch (ms), performance (img/sec), '
                         'memory use (MB), comment\n')
-                f = open('/%s.csv'%logfile,'a+')
+                f = open('%s.csv'%logfile,'a+')
                 f.write(header)
                 f.close()
 
@@ -316,7 +316,7 @@ def main(_):
                 mem = bm_Lenet.get_memory_use()
             else:
                 mem = 0
-            with open('/%s.csv'%logfile,'a+') as f:
+            with open('%s.csv'%logfile,'a+') as f:
                 f.write(model.generate_logtext(timeUsed, mem))
 
         if not args.no_timeline:
