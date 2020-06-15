@@ -3,6 +3,7 @@
 mv whitebox/lenet.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
 mv whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
+mkdir /results
 
 num=(1)
 batchsize=(1 2 4 8 16 32 64 128 256 512)
@@ -10,7 +11,7 @@ opti=(sgd adam adadelta adagrad rmsprop momentum)
 for p in ${opti[*]}; do
     for i in ${batchsize[*]}; do
         for k in ${num[*]};do
-    	    python benchmark.py --testVGG16 --imgsize=224 --numclasses=1000 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
+    	    python benchmark.py --testLenet --imgsize=28 --numclasses=10 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
 	done
     done
 done
