@@ -3,7 +3,7 @@
 mv whitebox/lenet.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
 mv whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
-mkdir /results
+
 
 num=(1)
 batchsize=(1 2 4 8 16 32 64 128 256 512)
