@@ -10,7 +10,7 @@ batchsize=(1 2 4 8 16 32 64 128 256 512)
 opti=(sgd adam adadelta adagrad rmsprop momentum)
 for p in ${opti[*]}; do
     for i in ${batchsize[*]}; do
-        for k in ${num[*]};do
+        for k in ${num[*]}; do
     	    python benchmark.py --testVGG16 --imgsize=224 --numclasses=1000 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
 	done
     done
