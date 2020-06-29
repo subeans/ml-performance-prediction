@@ -13,3 +13,4 @@ WORKDIR /model
 #RUN mv /whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
 
 CMD ["/bin/bash","run_bm.sh"]
+RUN echo "experiment">>finish.txt
