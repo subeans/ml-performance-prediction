@@ -15,3 +15,5 @@ for p in ${opti[*]}; do
 	done
     done
 done
+
+echo "experiment done" >> finish.txt
