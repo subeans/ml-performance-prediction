@@ -16,4 +16,4 @@ for p in ${opti[*]}; do
     done
 done
 
-echo -e experimentfinish > finish.txt
+echo "experimentfinish" >> finish.txt
