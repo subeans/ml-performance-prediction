@@ -13,8 +13,7 @@ for p in ${opti[*]}; do
         for k in ${num[*]}; do
     	    python benchmark.py --testLenet --imgsize=28 --numclasses=10 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
 	done
-	echo -e experimentfinish > finish.txt
     done
 done
 
-
+echo -e experimentfinish > finish.txt
