@@ -14,8 +14,8 @@ for p in ${opti[*]}; do
     	    python benchmark.py --testLenet --imgsize=28 --numclasses=10 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
 	   
 	done
-	touch /results/finish.txt
+	
     done
 done
 
-
+touch /results/finish.txt
