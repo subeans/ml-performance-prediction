@@ -17,4 +17,4 @@ for p in ${opti[*]}; do
     done
 done
 
-touch finish.txt
+touch /results/finish.txt
