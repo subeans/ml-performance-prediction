@@ -11,8 +11,8 @@ opti=(sgd adam adadelta adagrad rmsprop momentum)
 for p in ${opti[*]}; do
     for i in ${batchsize[*]}; do
         for k in ${num[*]}; do
-    	    #python benchmark.py --testLenet --imgsize=28 --numclasses=10 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
-	    python benchmark.py --testVGG16 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
+    	    python benchmark.py --testLenet --imgsize=28 --numclasses=10 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
+	    #python benchmark.py --testVGG16 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
 	done
 	
     done
