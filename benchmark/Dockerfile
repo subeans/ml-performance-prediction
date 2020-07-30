@@ -11,7 +11,7 @@ RUN ls
 #RUN cd ~ 
 RUN rm -rf /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets/vgg.py
 CMD ["git clone https://github.com/subeans/whitebox.git"]
-RUN mv /ml-performance-prediction/benchmark/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
+RUN mv /model/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 
 #RUN mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py \
 #/usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
