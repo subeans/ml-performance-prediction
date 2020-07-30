@@ -10,7 +10,7 @@ RUN ls
 #RUN rm -rf vgg.py
 #RUN cd ~ 
 RUN rm -rf /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets/vgg.py
-RUN mv ~/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
+RUN mv ~/ml-performance-prediction/benchmark/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 
 #RUN mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py \
 #/usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
