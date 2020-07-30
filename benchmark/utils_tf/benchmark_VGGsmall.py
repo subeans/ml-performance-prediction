@@ -8,7 +8,7 @@ from tensorflow.python.client import timeline
 import numpy as np
 import time
 from utils_tf import merge_timeline
-from utils_tf import net_vggsmall as vggsmall
+
 
 class VGGsmall(object):
     """Class for gerenating the benchmark operations"""
@@ -49,7 +49,7 @@ class VGGsmall(object):
                     self.numclasses)
 
             # Define model from slim.nets.vgg
-            model = vggsmall.vgg_small
+            model = VGGsmall.VGGsmall
 
             # Run data through model
             prediction, _ = model(
