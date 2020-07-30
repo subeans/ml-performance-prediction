@@ -5,6 +5,8 @@ result metric.
 
 import tensorflow as tf
 from tensorflow.python.client import timeline
+import tensorflow.contrib.slim as slim
+import tensorflow.contrib.slim.nets as nets
 import numpy as np
 import time
 from utils_tf import merge_timeline
@@ -49,7 +51,7 @@ class VGGsmall(object):
                     self.numclasses)
 
             # Define model from slim.nets.vgg
-            model = VGGsmall.VGGsmall
+            model = nets.vgg.vgg_small
 
             # Run data through model
             prediction, _ = model(
