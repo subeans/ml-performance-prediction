@@ -8,7 +8,7 @@ from tensorflow.python.client import timeline
 import numpy as np
 import time
 from utils_tf import merge_timeline
-from utils_tf import nets_vggsmall as vggsmall
+from utils_tf import net_vggsmall as vggsmall
 
 class VGGsmall(object):
     """Class for gerenating the benchmark operations"""
