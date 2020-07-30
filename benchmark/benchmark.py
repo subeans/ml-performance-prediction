@@ -7,7 +7,7 @@ import os
 import argparse
 import tensorflow as tf
 import time
-from utils_tf import benchmark_matmul, benchmark_conv, benchmark_conv_mult, benchmark_VGG16 ,benchmark_Lenet,benchmark_vggsmall
+from utils_tf import benchmark_matmul, benchmark_conv, benchmark_conv_mult, benchmark_VGG16 ,benchmark_Lenet,benchmark_VGGsmall
 from utils_tf import run_benchmark
 
 
@@ -223,7 +223,7 @@ def main(_):
         else:
             logfile = args.logfile
 
-        model = benchmark_vggsmall.VGGsmall(args)
+        model = benchmark_VGGsmall.VGGsmall(args)
 
         train_op, vggsmall_graph = model.create_benchmark_op()
 
