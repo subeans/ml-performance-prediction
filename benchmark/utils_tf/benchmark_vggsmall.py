@@ -5,10 +5,10 @@ result metric.
 
 import tensorflow as tf
 from tensorflow.python.client import timeline
-import nets_vggsmall as vggsmall
 import numpy as np
 import time
 from utils_tf import merge_timeline
+from utils_tf import nets_vggsmall as vggsmall
 
 class VGGsmall(object):
     """Class for gerenating the benchmark operations"""
