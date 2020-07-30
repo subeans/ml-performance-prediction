@@ -270,7 +270,7 @@ def main(_):
         print("\n========================================\n\n")
     
     #vggsmall
-     if args.testVGGsmall:
+    if args.testVGGsmall :
         if args.logfile == '':
             logfile = str('/results/benchmark_VGGsmall_%s_%s'
                     %(args.device, time.strftime("%Y%m%d")))
