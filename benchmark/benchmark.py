@@ -216,61 +216,7 @@ def main(_):
 
 
     ########## Benchmark training step of VGG16 ##########
-    if args.testVGG16:
-        if args.logfile == '':
-            logfile = str('/results/benchmark_VGG16_%s_%s'
-                    %(args.device, time.strftime("%Y%m%d")))
-        else:
-            logfile = args.logfile
-
-        model = benchmark_VGG16.VGG16(args)
-
-        train_op, vgg16_graph = model.create_benchmark_op()
-
-        bm_vgg16 = run_benchmark.benchmark(
-                train_op,
-                args.iter_warmup,
-                args.iter_benchmark,
-                args.iter_timeline,
-                vgg16_graph)
-
-
-        print("========================================\n")
-        print("Start training VGG-16")
-        print("Optimizer == " + args.optimizer )
-        timeUsed = bm_vgg16.run_benchmark()
-
-        print("\nTraining VGG-16 (%dx%d pixel, float%d, batchsize %d): "
-                "%.3f ms per batch / %.3f images per sec , optimizer %s)"
-                % (args.imgsize,
-                args.imgsize,
-                args.precision,
-                args.batchsize,
-                timeUsed*1000,
-                args.batchsize/timeUsed, args.optimizer))
-
-        if not args.no_saving:
-            if not os.path.isfile('%s.csv'%logfile):
-                header = ('operation, imsize, precision (bits), batchsize,'
-                        'time per batch (ms), performance (img/sec), '
-                        'memory use (MB), comment\n')
-                f = open('%s.csv'%logfile,'a+')
-                f.write(header)
-                f.close()
-
-            if use_gpu:
-                mem = bm_vgg16.get_memory_use()
-            else:
-                mem = 0
-            with open('%s.csv'%logfile,'a+') as f:
-                f.write(model.generate_logtext(timeUsed, mem))
-
-        if not args.no_timeline:
-            bm_vgg16.run_timeline(logfile, args.batchsize)
-        print("\n========================================\n\n")
-    
-    #vggsmall
-    if args.testVGGsmall :
+    if args.testVGGsmall:
         if args.logfile == '':
             logfile = str('/results/benchmark_VGGsmall_%s_%s'
                     %(args.device, time.strftime("%Y%m%d")))
@@ -290,11 +236,11 @@ def main(_):
 
 
         print("========================================\n")
-        print("Start training VGG-16")
+        print("Start training VGG-small")
         print("Optimizer == " + args.optimizer )
         timeUsed = bm_vggsmall.run_benchmark()
 
-        print("\nTraining VGG-16 (%dx%d pixel, float%d, batchsize %d): "
+        print("\nTraining VGG-small (%dx%d pixel, float%d, batchsize %d): "
                 "%.3f ms per batch / %.3f images per sec , optimizer %s)"
                 % (args.imgsize,
                 args.imgsize,
@@ -322,6 +268,7 @@ def main(_):
         if not args.no_timeline:
             bm_vggsmall.run_timeline(logfile, args.batchsize)
         print("\n========================================\n\n")
+    
     
     # Lenet5     
     if args.testLenet:
