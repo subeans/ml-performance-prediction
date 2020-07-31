@@ -1,9 +1,7 @@
 #!/bin/bash
 
-CMD ["git clone git clone https://github.com/subeans/whitebox.git"]
-
-rm -rf /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets/vgg.py
-mv /model/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
+#rm -rf /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets/vgg.py
+#mv /model/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 mv /model/whitebox/lenet.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
 mv whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
@@ -15,8 +13,8 @@ opti=(sgd adadelta adam adagrad rmsprop momentum)
 for p in ${opti[*]}; do
     for i in ${batchsize[*]}; do
         for k in ${num[*]}; do
-	    python benchmark.py --testVGGsmall --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
-    	    #python benchmark.py --testLenet --imgsize=28 --numclasses=10 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
+	    #python benchmark.py --testVGGsmall --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
+    	    python benchmark.py --testLenet --imgsize=28 --numclasses=10 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
 	    #python benchmark.py --testVGG16 --no_timeline --iter_benchmark=100 --batchsize=$i --optimizer=$p
 	done
 	
