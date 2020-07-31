@@ -14,7 +14,7 @@ WORKDIR /model
 #RUN mv /model/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 
 #RUN mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py \
-/usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
+#/usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
 
 #RUN mv /model/whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
 
