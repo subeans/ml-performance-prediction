@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#rm -rf /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets/vgg.py
-#mv /model/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
+rm -rf /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets/vgg.py
+mv /model/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 mv /model/whitebox/lenet.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
 mv whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
