@@ -1,8 +1,12 @@
 #!/bin/bash
 
-#mv whitebox/lenet.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
-#mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
-#mv whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
+CMD ["git clone git clone https://github.com/subeans/whitebox.git"]
+
+rm -rf /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets/vgg.py
+mv /model/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
+mv /model/whitebox/lenet.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
+mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
+mv whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
 
 
 num=(1 2 3)
