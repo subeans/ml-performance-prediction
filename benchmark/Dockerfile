@@ -10,7 +10,7 @@ WORKDIR /model
 #RUN rm -rf vgg.py
 #RUN cd ~ 
 #RUN rm -rf /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets/vgg.py
-#CMD ["git clone https://github.com/subeans/whitebox.git"]
+CMD ["git clone https://github.com/subeans/whitebox.git"]
 #RUN mv /model/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 
 #RUN mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py \
