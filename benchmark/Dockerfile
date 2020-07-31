@@ -13,10 +13,10 @@ RUN rm -rf /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python
 CMD ["git clone https://github.com/subeans/whitebox.git"]
 RUN mv /model/whitebox/vgg.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/python/slim/nets
 
-#RUN mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py \
-#/usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
+RUN mv /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets.py \
+/usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim/nets_old.py
 
-#RUN mv /whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
+RUN mv /model/whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/slim
 
 CMD ["/bin/bash","run_bm.sh"]
 
