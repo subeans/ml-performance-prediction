@@ -9,7 +9,8 @@ mv whitebox/nets.py /usr/local/lib/python2.7/dist-packages/tensorflow/contrib/sl
 
 num=(1 2 3)
 batchsize=(1 2 4 8 16 32 64 128 256 512)
-opti=(sgd adadelta adam adagrad rmsprop momentum)
+opti=(sgd adadelta adam)
+#opti=(sgd adadelta adam adagrad rmsprop momentum)
 for p in ${opti[*]}; do
     for i in ${batchsize[*]}; do
         for k in ${num[*]}; do
